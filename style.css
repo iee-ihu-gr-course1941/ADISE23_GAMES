@@ -93,6 +93,7 @@ body {
 
 .form-group button:hover {
     background-color: rgb(80, 0, 0);
+    transform: scale(1.05); /* Increase the scale on hover */
 }
 
 
