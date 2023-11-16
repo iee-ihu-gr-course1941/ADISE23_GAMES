@@ -6,9 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome of GAMES</title>
     <link rel="stylesheet" href="style.css">
+
+    <style>
+         a {
+            text-decoration: none;
+            color: inherit; /* Inherit text color from parent */
+           }
+    </style>
 </head>
 
-<body>
 <!--
     <header>
         <h2><a href="main.html">GAMES</a></h2>
@@ -17,23 +23,30 @@
         </nav>
     </header>
 -->
+<body>
     <div class="login-container">
         <h2>MENU</h2>
-        <form class="login-form" method="post">
+        <div class="login-form">
             <div class="form-group">
-                <button type="submit" class="btn">Start</button>
-            </div>
-            <div class="form-group">                
-                <button type="submit" class="btn"><a href="rules.html">Rules</a></button>
+                <button onclick="redirectToPage('start.html')">Start</button>
             </div>
             <div class="form-group">
-                <button type="submit" class="btn">Score</button>
+                <button onclick="redirectToPage('rules.html')">Rules</button>
             </div>
             <div class="form-group">
-                <button type="submit" class="btn"><a href="settings.html">Settings</a></button>
+                <button onclick="redirectToPage('score.html')">Score</button>
             </div>
-        </form>
+            <div class="form-group">
+                <button onclick="redirectToPage('settings.html')">Settings</button>
+            </div>
+        </div>
     </div>
 </body>
+
+<script>
+    function redirectToPage(page) {
+        window.location.href = page;
+    }
+</script>
 
 </html>
