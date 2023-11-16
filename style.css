@@ -87,7 +87,8 @@ body {
     border-radius: 4px;
 
     font-family: 'Times New Roman', sans-serif; 
-
+    font-size: 1rem;
+    
     cursor: pointer;
 }
 
