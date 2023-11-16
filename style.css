@@ -88,7 +88,8 @@ body {
 
     font-family: 'Times New Roman', sans-serif; 
     font-size: 1rem;
-    
+    letter-spacing: 2px;
+
     cursor: pointer;
 }
 
