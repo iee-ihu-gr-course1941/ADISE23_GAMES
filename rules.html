@@ -10,11 +10,19 @@
     <style>
         h3 {
             color: maroon;
+            letter-spacing: 1px;
         }
 
         p {
-            text-align: justify;
+            text-align: justify;    
+            letter-spacing: 1px;
+            line-height: 1.1;
         }
+
+        li{
+            padding: 1.7px;
+        }
+
     </style>
 
 </head>
@@ -26,24 +34,24 @@
         <form class="login-form" method="post">
             <div class="form-group">
 
-                <p>Four cards are dealt to each player and four are placed face-up on the table. Players can pick a card from the ones on the table
-                    <i>(the one that suits them best)</i> on the condition that they leave one in its place. The player who gets to choose first is
-                    determined clockwise (each time a different player chooses first). After everyone has chosen (a player may choose not to change
-                    a card), a 'sweep' occurs, the previous cards on the table are collected, and 4 new cards are dealt face down. The process continues
-                    as in the beginning. When a player collects 4 identical cards, he must say the word 'Games' to win.
+                <p>
+                    <ul>
+                    <li>Four cards are dealt to each player and four are placed face-up on the table. Players can pick a card from the ones on the table
+                    <i><b>(the one that suits them best)</b></i> on the condition that they leave one in its place.</li>
+                    <li>The player who gets to choose first is
+                    determined clockwise (each time a different player chooses first).</li>
+                    <li>After everyone has chosen (a player may choose not to change
+                    a card), a 'sweep' occurs, the previous cards on the table are collected, and 4 new cards are dealt face down.</li>
+                    <li>The process continues as in the beginning. When a player collects 4 identical cards, he must say the word <b>'Games'</b> to win.</li>
+                    </ul>
                 </p>
             </div><br>
             <div class="form-group">
-                <button type="button" class="btn" onclick="redirectToPage('main.html')">Back to the menu</button>
+                <button type="button" class="btn" onclick="document.location='main.html'">Back to the menu</button>
             </div>
         </form>
     </div>
 
-    <script>
-        function redirectToPage(page) {
-            window.location.href = page;
-        }
-    </script>
 </body>
 
 </html>
