@@ -21,25 +21,19 @@
         <h2>MENU</h2>
         <div class="login-form">
             <div class="form-group">
-                <button onclick="redirectToPage('start.html')">Start</button>
+                <button onclick="document.location='start.html'">Start</button>
             </div>
             <div class="form-group">
-                <button onclick="redirectToPage('rules.html')">Rules</button>
+                <button onclick="document.location='rules.html'">Rules</button>
             </div>
             <div class="form-group">
-                <button onclick="redirectToPage('score.html')">Score</button>
+                <button onclick="document.location='score.html'">Score</button>
             </div>
             <div class="form-group">
-                <button onclick="redirectToPage('settings.html')">Settings</button>
+                <button onclick="document.location='settings.html'">Settings</button>
             </div>
         </div>
     </div>
 </body>
-
-<script>
-    function redirectToPage(page) {
-        window.location.href = page;
-    }
-</script>
 
 </html>
