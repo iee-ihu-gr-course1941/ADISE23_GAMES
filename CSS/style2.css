@@ -1,0 +1,50 @@
+body {
+  background-image: url('../images/loading.png');
+  background-size: 1550px 900px;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.loading-container {
+  text-align: center;
+}
+
+.loading-text {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: rgba(240, 232, 163, 0.886);
+  letter-spacing: 4px;
+  font-size: 2rem;
+}
+
+.loading-text1 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: rgba(240, 232, 163, 0.886);
+  letter-spacing: 4px;
+  font-size: 2rem;
+  margin-bottom: 70px; /* Adjust the value as needed */
+
+}
+
+.loading-dots {
+  display: inline-block;
+  animation: loadingAnimation 1s infinite;
+}
+
+@keyframes loadingAnimation {
+  0%, 20% {
+      color: transparent;
+  }
+  50% {
+      color: rgba(240, 232, 163, 0.886);
+  }
+  80%, 100% {
+      color: transparent;
+  }
+}
