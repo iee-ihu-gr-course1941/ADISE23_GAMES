@@ -169,3 +169,23 @@ header {
     background: goldenrod;
     color: black;
 }
+
+
+/* j. */
+
+/* space between the btn and the register */ 
+.login-register {
+    font-size: .9em;
+    text-align: center;
+}
+
+/* change the color/style of register under the btn */ 
+.login-register p a {
+    color: rgb(77, 8, 8);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.login-register p a:hover {
+    text-decoration: underline;
+}
