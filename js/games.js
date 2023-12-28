@@ -8,7 +8,7 @@ document.getElementById("username").addEventListener("blur", function() {
 //Elegxos an to username uparxei mesw AJAX request
 function checkUsername(username)
 {
-  var xhr = new XMLHttpRequest();
+    var xhr = new XMLHttpRequest();
     xhr.open("POST", "../lib/register.php", true);
     xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
     xhr.onreadystatechange = function() {
