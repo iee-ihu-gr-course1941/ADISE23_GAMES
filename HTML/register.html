@@ -1,18 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register</title>
     <link rel="stylesheet" href="../CSS/style.css">
 </head>
-
 <body>
     <div class="login-container">
         <h2>Register Form</h2>
-        <form class="login-form" action="login_after.html" method="post">
-            <div class="form-group"> 
+        <form class="login-form" action="../lib/register.php" method="post" id="registerForm" onsubmit="event.preventDefault(); checkBeforeSubmit();">
+            <div class="form-group">
                 <span class="icon"><ion-icon name="person-outline"></ion-icon></span>
                 <label for="username">Username</label>
                 <input type="text" id="username" name="username" required>
@@ -31,11 +29,11 @@
             </div>
 
             <div class="login-register">
-                <p>Already have an account ? <a href="login.html" class="login-link"> Login</a></p>
+                <p>Already have an account ? <a href="login.html" class="login-link">Login</a></p>
             </div>
 
             <div class="form-group">
-                <button type="submit">Register Now! </button>
+                <button type="submit" onclick="checkBeforeSubmit()">Register Now!</button>
             </div>
 
             <div class="form-group">
@@ -44,9 +42,26 @@
         </form>
     </div>
 
-    <!--img--> 
-     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <!-- Popup Window for Success -->
+    <div class="popup" id="popup">
+        <img src="../images/tick.png" width="100px">
+        <h2>Thank you!</h2>
+        <p>Your details have been successfully submitted!</p>
+        <button type="button" onclick="submitForm()">OK</button>
+    </div>   
 
+    <!-- Popup Window for Error -->
+    <div class="popup" id="failed">
+        <img src="../images/error_icon.png" width="100px">
+        <h2>Warning!</h2>
+        <p id="error-message">This username already exists. Please choose another one.</p>
+        <button type="button" onclick="closePopup()">OK</button>
+    </div>   
+
+
+    <script src="../js/games.js"></script>
+    <!-- Ionicons -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
 </html>
