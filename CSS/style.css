@@ -16,15 +16,10 @@ body {
 
 .login-container {
     background-color: #e4c473;
-    
     border-radius: 8px;
-    
     box-shadow: 0 0 10px rgba(239, 226, 112, 0.886);
-    
     padding: 20px;
-    
     width: 300px;
-
     max-width: 100%; 
 
 }
@@ -32,14 +27,10 @@ body {
 .login-container h2 {
 
     text-align: center;
-
     color: #333;
-
-
     font-weight: bold; 
     text-transform: uppercase; 
     letter-spacing: 2px; 
-
     font-size: 1.5rem; 
 
 }
@@ -240,8 +231,6 @@ header {
 }
 
 
-/* j. */
-
 /* space between the btn and the register */ 
 .login-register {
     font-size: .9em;
@@ -258,3 +247,4 @@ header {
 .login-register p a:hover {
     text-decoration: underline;
 }
+
