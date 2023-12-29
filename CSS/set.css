@@ -1,0 +1,106 @@
+.container {
+    position: absolute;
+    top: 45%;
+    right: 50%;
+    transform: translate(-50%, -50%);
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px; 
+}
+
+.container .toggle {
+    position: absolute;
+    top: 20%; 
+    right: 60%;
+    transform: translate(-50%, -50%);
+    width: 50px;
+    height: 25px;
+    background: #444;
+    border-radius: 15px;
+    transition: 0.3s;
+}
+
+.container .toggle .toggle-button {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 18px;
+    height: 18px;
+    background: white;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.container .text {
+    position: relative;
+    left: 40%;
+    width: 5px;
+    transform: translate(-50%, -50%);
+    font-size: 20px;
+}
+
+.container .toggle.active {
+    background: rgb(77, 8, 8);
+}
+
+.container .toggle.active .toggle-button {
+    left: 5px;
+}
+
+
+
+
+/* ----------------------------- ALLAGH LOGIKA */
+.container2 {
+    position: absolute;
+    top: 48%;
+    right: 50%;
+    transform: translate(-50%, -50%);
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px; 
+}
+
+.container2 .toggle2 {
+    position: absolute;
+    top: 80%; 
+    right: 50%;
+    transform: translate(-50%, -50%);
+    width: 50px;
+    height: 25px;
+    background: #444;
+    border-radius: 15px;
+    transition: 0.3s;
+}
+
+.container2 .toggle2 .toggle-button2 {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 18px;
+    height: 18px;
+    background: white;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.container2 .text2 {
+    position: relative;
+    left: 35%;
+    width: 5px;
+    top: 40px;
+    transform: translate(-50%, -50%);
+    font-size: 20px;
+}
+
+.container2 .toggle2.active {
+    background: rgb(77, 8, 8);
+}
+
+
