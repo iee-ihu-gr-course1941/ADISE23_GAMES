@@ -12,12 +12,13 @@ function usernameExists($pdo, $username) {
 // apanthsh sto AJAX request gia elegxo  username 
 if (isset($_POST['action']) && $_POST['action'] == 'check_username') {
     $username = $_POST['username'];
-    echo usernameExists($pdo, $username) ? "exists" : "not_exists";
-    exit(); // Terminate script 
+    $exists = usernameExists($pdo, $username);
+    echo json_encode(['exists' => $exists]);
+    exit();
 }
 
 // Form submission
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $username = $_POST['username'];
     $password = password_hash($_POST['password'], PASSWORD_DEFAULT); // Encrypt the password
     $email = $_POST['email'];
@@ -29,16 +30,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $stmt->bindParam(3, $email);
 
         if ($stmt->execute()) {
-            // Redirect to a success page or show a success message
-            header("Location: ../HTML/register.html?signup=success"); 
-            exit();
+            echo json_encode(['success' => true, 'message' => 'Registration successful']);
         } else {
-            echo "Error: " . $stmt->errorInfo()[2];
+            echo json_encode(['success' => false, 'message' => 'Registration failed', 'errorInfo' => $stmt->errorInfo()]);
         }
     } else {
-        // den xreiazetai idiaitera
-        header("Location: ../HTML/register.html?error=username_exists");
-        exit();
+        echo json_encode(['success' => false, 'message' => 'Username already exists']);
     }
+    exit();
 }
 ?>
