@@ -30,7 +30,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $stmt->bindParam(3, $email);
 
         if ($stmt->execute()) {
-            echo json_encode(['success' => true, 'message' => 'Registration successful']);
+            echo json_encode(['success' => true, 'message' => 'Registration successful']); //an ginei to registration
         } else {
             echo json_encode(['success' => false, 'message' => 'Registration failed', 'errorInfo' => $stmt->errorInfo()]);
         }
