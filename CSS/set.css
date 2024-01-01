@@ -51,8 +51,6 @@
 }
 
 
-
-
 /* ----------------------------- ALLAGH LOGIKA */
 .container2 {
     position: absolute;
@@ -69,7 +67,7 @@
 .container2 .toggle2 {
     position: absolute;
     top: 80%; 
-    right: 50%;
+    right: 60%;
     transform: translate(-50%, -50%);
     width: 50px;
     height: 25px;
@@ -101,6 +99,10 @@
 
 .container2 .toggle2.active {
     background: rgb(77, 8, 8);
+}
+
+.container2 .toggle2.active .toggle-button2 {
+    left: 5px;
 }
 
 
