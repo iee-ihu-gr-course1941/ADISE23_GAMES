@@ -11,17 +11,19 @@
 <body>
     <div class="login-container">
         <h2>Login Form</h2>
-        <form class="login-form" action="login_after.html" method="post">
+        <form class="login-form" action="../lib/login.php" method="post">
             <div class="form-group">
-                <span class="icon"><ion-icon name="person-outline"></ion-icon></span> 
                 <label for="username">Username</label>
                 <input type="text" id="username" name="username" required>
+                <div>&nbsp;</div>
+
             </div>
 
             <div class="form-group">
-                <span class="icon"><ion-icon name="lock-closed-outline"></ion-icon></span>
                 <label for="password">Password</label>
                 <input type="password" id="password" name="password" required>
+                <div>&nbsp;</div>
+
             </div>
 
             <div class="login-register">
@@ -29,7 +31,7 @@
             </div>
 
             <div class="form-group">
-                <button type="submit">Login Now! </button>
+                <button type="submit">Login</button>
             </div>
 
             <div class="form-group">
@@ -37,10 +39,43 @@
             </div>
         </form>
     </div>
+        <!-- Popup Window for Error -->
+    <div class="popup" id="failed">
+        <img src="../images/error_icon.png" width="100px">
+        <h2>Warning!</h2>
+        <p id="error-message">Username or password is incorrect.</p>
+        <button type="button" onclick="closePopup()">OK</button>
+    </div>   
 
-     <!--img--> 
-     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+     <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            login();
+        });
+    });
+
+    function login() {
+        var username = document.getElementById('username').value;
+        var password = document.getElementById('password').value;
+
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', 'login.php', true);
+        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+        xhr.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                var response = JSON.parse(this.responseText);
+                if (response.success) {
+                    alert('Login successful!');
+                    // Redirect to another page or further processing
+                } else {
+                    alert('Login failed: ' + response.error);
+                }
+            }
+        };
+        xhr.send('username=' + encodeURIComponent(username) + '&password=' + encodeURIComponent(password));
+    }
+     </script>
 
 </body>
 </html>
