@@ -14,7 +14,6 @@ function logoutUser() {
           var response = JSON.parse(this.responseText);
           if (response.success) {
               alert(response.message); // Show success message
-              // Optionally, redirect to the login page or another page
               window.location.href = '../HTML/main.html';
           } else {
               alert(response.message); // Show failure message
