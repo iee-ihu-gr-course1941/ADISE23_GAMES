@@ -1,0 +1,141 @@
+
+ <!DOCTYPE html>
+ <html lang="en">
+     
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Score Board</title>
+     <link rel="stylesheet" href="../CSS/style.css">
+     <link rel="stylesheet" href="../CSS/set.css">
+     <link rel="stylesheet" href="../CSS/scr.css">
+     <link rel="stylesheet" href="../CSS/user.css">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+ 
+ </head>
+ 
+ <body>
+     <main class="table" id="customers_table">
+         <section class="table__header">
+             <h1>My Score Board</h1>
+             <div class="input-group">
+                 <input type="search" placeholder="Searching...">
+                 <img src="../images/search.png" alt="">
+             </div>
+             
+         </section>
+         <section class="table__body">
+             <table>
+                 <thead>
+                     <tr>
+                        <tr>
+                            <th>Date <span class="icon-arrow">&UpArrow;</span></th>
+                            <th>Wins <span class="icon-arrow">&UpArrow;</span></th>
+                            <th>Lose <span class="icon-arrow">&UpArrow;</span></th>
+                            <th>Score <span class="icon-arrow">&UpArrow;</span></th>
+                            <th>Round <span class="icon-arrow">&UpArrow;</span></th>
+                        </tr>
+                     </tr>
+                 </thead>
+                 <tbody>
+                     <tr>
+                         <td>01/01/2024</td>
+                         <td><p class="status">8</p></td>
+                         <td><p class="status2">3</p></td>
+                         <td>Score</td>
+                         <td>Round</td>
+                     </tr>
+                     <tr>
+                         <td>13/01/2024</td>
+                         <td><p class="status">5</p></td>
+                         <td><p class="status2">1</p></td>
+                         <td>Score</td>
+                         <td>Round</td>
+                     </tr>
+                     <tr>
+                         <td>18/01/2024</td>
+                         <td><p class="status">2</p></td>
+                         <td><p class="status2">4</p></td>
+                         <td>Score</td>
+                         <td>Round</td>
+                     </tr>
+                     <tr>
+                         <td>19/01/2024</td>
+                         <td><p class="status">9</p></td>
+                         <td><p class="status2">3</p></td>
+                         <td>Score</td>
+                         <td>Round</td>
+                     </tr>
+                 </tbody>
+             </table>
+         </section>
+     </main>
+
+<!-- USER PROFIL -->
+<div class="nava">
+    <nav class="navbar" >
+        <div class="profile-dropdown">
+            <div class="profile-dropdown-btn" onclick="toggle()">
+                <div class="profile-img">
+                    <i class="fa-solid fa-circle"></i>
+                </div>
+                <span> Username <i class="fa-solid fa-angle-down"></i> </span>
+            </div>
+
+            <ul class="profile-dropdown-list">
+                <li class="profile-dropdown-list-item">
+                    <a href="#">
+                        <i class="fa-regular fa-user"></i> 
+                        My Profile
+                    </a>
+                </li>
+                <li class="profile-dropdown-list-item">
+                    <a href="scrbrd.html">
+                        <i class="fa-solid fa-chart-line"></i>  
+                        Score Board
+                    </a>
+                </li>
+                <li style="height: 60px;"  class="profile-dropdown-list-item">
+                            <audio id="audio" loop>
+                                <source src="1.mp3" type="audio/mp3">
+                            </audio>
+                            <div class="container">
+                                <div class="toggle" onclick="toggleSound('audio')">
+                                    <div class="toggle-button" id="playPauseBTN"></div>
+                                </div>
+                                <div class="text">Music OFF</div>
+                            </div>
+                </li>
+                <li style="height: 60px;" class="profile-dropdown-list-item">
+                            <audio id="audio2"> <!-- ALLAGH -->
+                                <source id="sound" src="sound.wav" type="audio/mp3">
+                            </audio>
+                            <div class="container2">
+                                <div class="toggle2" onclick="toggleSound2('audio2')">
+                                    <div class="toggle-button2" id="playPauseBTN2"></div>
+                                </div>
+                                <div class="text2">Sound OFF</div>
+                            </div>
+                       
+                </li>
+            <hr />
+                <li class="profile-dropdown-list-item">
+                    <a href="login.html">
+                        <i class="fa-solid fa-arrow-right-from-bracket"></i> 
+                        Log out
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</div>
+
+     <script src="../js/set.js"></script>
+     <script src="../js/user.js"></script>
+     <script src="../js/scbrd.js"></script>
+
+ 
+ </body>
+ 
+ </html>
+ 
