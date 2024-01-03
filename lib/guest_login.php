@@ -2,18 +2,14 @@
 session_start();
 header('Content-Type: application/json');
 
-// Include your database connection details
 require_once 'dbconnect.php';
 
-// Insert a new guest player record
 $stmt = $pdo->prepare("INSERT INTO GuestPlayers (Username) VALUES (?)");
 $guestUsername = "Guest"; // Or any default name you want to use
 $stmt->execute([$guestUsername]);
 
-// Get the last inserted ID which will serve as the PlayerID
 $playerId = $pdo->lastInsertId();
 
-// Check if the guest player was successfully created
 if($playerId) {
     // Set session variables
     $_SESSION['loggedIn'] = true;
