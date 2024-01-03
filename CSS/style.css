@@ -1,6 +1,6 @@
-
 body {
     font-family: 'Times New Roman', sans-serif; 
+
     background-image: url('../images/background.png');
     background-size: 1550px 750px;
     background-position: center;
@@ -8,28 +8,256 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    
     height: 100vh;
 }
 
+.user-icon {
+    position: absolute;
+    top: 20px; 
+    right: 50px; 
+    z-index: 10; 
+}
 
-.login-container {
-    background-color: #e4c473;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(239, 226, 112, 0.886);
-    padding: 20px;
-    width: 300px;
-    max-width: 100%; 
+.user-icon img {
+    transition: transform 0.3s ease; 
+    width: 130px; 
+    height: auto;
+    cursor: pointer;
 
 }
 
+
+.table-icon{
+    position: absolute;
+    top: 120px; 
+    left: 470px; 
+    z-index: 10; 
+}
+
+.table-icon img {
+    transition: transform 0.3s ease; 
+    width: 600px; 
+    height: auto;
+}
+
+.user-icon img:hover {
+    transform: scale(1.10); 
+}
+
+
+
+/*User sta deksia */
+.user-right {
+    position: absolute;
+    transform: rotate(90deg);
+    bottom: 230px; 
+    right: 300px; 
+    z-index: 10; 
+}
+
+.user-right img {
+    transition: transform 0.3s ease; 
+    width: 120px; 
+    height: auto;
+    cursor: pointer;
+
+}
+
+.user-right img:hover {
+    transform: scale(1.05); 
+}
+
+
+/*User sta aristera */
+
+.user-left {
+    position: absolute;
+    transform: rotate(270deg);
+    bottom: 230px; 
+    left: 300px; 
+    z-index: 10; 
+}
+
+.user-left img {
+    transition: transform 0.3s ease; 
+    width: 120px; 
+    height: auto;
+    cursor: pointer;
+
+}
+
+.user-left img:hover {
+    transform: scale(1.05); 
+}
+
+
+/*User sta mprosta */
+
+.user-front {
+    position: absolute;
+    top: 40px; 
+    left: 700px; 
+    z-index: 10; 
+}
+
+.user-front img {
+    transition: transform 0.3s ease; 
+    width: 120px; 
+    height: auto;
+    cursor: pointer;
+
+}
+
+.user-front img:hover {
+    transform: scale(1.05); 
+}
+
+/* paketo me kartes*/
+
+.card-pack {
+    position: absolute;
+    top: 370px; 
+    left: 700px; 
+    z-index: 10; 
+
+}
+
+.card-pack img {
+    transition: transform 0.3s ease; 
+    width: 120px; 
+    height: auto;
+    cursor: pointer;
+
+}
+
+.card-pack img:hover {
+    transform: scale(1.05); 
+}
+
+/*Cards for player*/
+.first-card {
+    position: absolute;
+    top: 500px; 
+    left: 550px; 
+    z-index: 10; 
+
+}
+
+.first-card img {
+    transition: transform 0.3s ease; 
+    width: 130px; 
+    height: auto;
+    cursor: pointer;
+}
+
+.first-card img:hover {
+    transform: scale(1.05); 
+}
+
+
+.second-card {
+    position: absolute;
+    top: 500px; 
+    left: 650px; 
+    z-index: 10; 
+
+}
+
+.second-card img {
+    transition: transform 0.3s ease; 
+    width: 130px; 
+    height: auto;
+    cursor: pointer;
+}
+
+.second-card img:hover {
+    transform: scale(1.05); 
+}
+
+.third-card {
+    position: absolute;
+    top: 500px; 
+    left: 750px; 
+    z-index: 10; 
+
+}
+
+.third-card img {
+    transition: transform 0.3s ease; 
+    width: 130px; 
+    height: auto;
+    cursor: pointer;
+}
+
+.third-card img:hover {
+    transform: scale(1.05); 
+}
+
+
+.fourth-card {
+    position: absolute;
+    top: 500px; 
+    left: 850px; 
+    z-index: 10; 
+
+}
+
+.fourth-card img {
+    transition: transform 0.3s ease; 
+    width: 130px; 
+    height: auto;
+    cursor: pointer;
+}
+
+.fourth-card img:hover {
+    transform: scale(1.05); 
+}
+
+.card-holder{
+    position: absolute;
+    bottom: 10px; 
+    left: 547px; 
+    z-index: 10; 
+}
+
+.card-holder img{
+    transition: transform 0.3s ease; 
+    width: 435px; 
+    height: 60px;
+    cursor: pointer;
+}
+
+
+
+
+.login-container {
+    background-color: #ebebeb;
+    
+    border-radius: 8px;
+    
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.886);
+    
+    padding: 20px;
+    
+    width: 300px;
+
+    max-width: 100%; 
+
+
+}
 
 .login-container h2 {
 
     text-align: center;
+
     color: #333;
+
+
     font-weight: bold; 
     text-transform: uppercase; 
     letter-spacing: 2px; 
+
     font-size: 1.5rem; 
 
 }
@@ -41,7 +269,14 @@ body {
 }
 
 .form-group {
-    margin-bottom: 20px;
+    margin-bottom: 15px;
+}
+
+#input-error
+{
+    color: #c7c6c6;
+    font-size: 14px;
+    padding: 3px;
 }
 
 .form-group label {
@@ -49,7 +284,8 @@ body {
     
     margin-bottom: 5px;
     
-    color: #555;
+
+    color: #362020;
 }
 
 
@@ -58,6 +294,7 @@ body {
     width: calc(100% - 16px); 
 
     padding: 8px;
+
 
     border: 1px solid #ccc;
 
@@ -68,12 +305,12 @@ body {
 .form-group button {
     background-color: #15140c;
     
-    color: rgba(240, 232, 163, 0.886);
+    color: #c7c6c6;
     
     padding: 10px;
     width: 100%; /* size of the btn inside */
 
-    font-size: 1rem; 
+    font-size: 1rem; /* Adjust the font size as needed */
     
     border: none;
     
@@ -102,10 +339,10 @@ body {
     transform: translate(-50%,-50%)scale(0.1);
     text-align: center;
     padding: 0 30px 30px;
-    color: rgba(240, 232, 163, 0.886);
+    color: #ebebeb;
     visibility: hidden;
     transition: transform 0.4s, top 0.4s;
-    box-shadow: 0 0 10px rgba(240, 232, 163, 0.886);
+    box-shadow: 0 0 10px #ebebeb;
 
   }
  /* for the script */
@@ -115,8 +352,9 @@ body {
     transform: translate(-50%,-50%)scale(1);
   }
 
+
   .popup img{
-    margin-top: -50px;
+    margin-top: 10px;
     border-radius: 50%;
   }
 
@@ -126,11 +364,15 @@ body {
     margin: 30px 0 10px;
   }
 
+  .popup p{
+    font-size: 18px;
+  }
+
   .popup button{
     width: 100%;
-    margin-top: 50px;
+    margin-top: 40px;
     padding: 10px;
-    background-color: rgba(240, 232, 163, 0.886);
+    background-color: #ebebeb;
     border: 0;
     outline: none;
     font-size: 18px;
@@ -140,24 +382,11 @@ body {
     font-family: 'Times New Roman', sans-serif; 
 
   }
-
-.user-icon {
-    position: absolute;
-    top: 50px; 
-    right: 250px; 
-    z-index: 10; 
-}
-.user-icon img {
-    transition: transform 0.3s ease; 
-    width: 180px; 
-    height: auto;
-    cursor: pointer;
-
-}
-
-.user-icon img:hover {
-    transform: scale(1.10); 
-}
+  .popup button:hover{
+    background-color: rgb(80, 0, 0);
+    transform: scale(1.05); /* Increase the scale on hover */
+    color: #ebebeb;
+  }
 
 
 
