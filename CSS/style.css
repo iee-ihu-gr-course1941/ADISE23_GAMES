@@ -1,3 +1,4 @@
+
 body {
     font-family: 'Times New Roman', sans-serif; 
 
@@ -11,224 +12,6 @@ body {
     
     height: 100vh;
 }
-
-.user-icon {
-    position: absolute;
-    top: 20px; 
-    right: 50px; 
-    z-index: 10; 
-}
-
-.user-icon img {
-    transition: transform 0.3s ease; 
-    width: 130px; 
-    height: auto;
-    cursor: pointer;
-
-}
-
-
-.table-icon{
-    position: absolute;
-    top: 120px; 
-    left: 470px; 
-    z-index: 10; 
-}
-
-.table-icon img {
-    transition: transform 0.3s ease; 
-    width: 600px; 
-    height: auto;
-}
-
-.user-icon img:hover {
-    transform: scale(1.10); 
-}
-
-
-
-/*User sta deksia */
-.user-right {
-    position: absolute;
-    transform: rotate(90deg);
-    bottom: 230px; 
-    right: 300px; 
-    z-index: 10; 
-}
-
-.user-right img {
-    transition: transform 0.3s ease; 
-    width: 120px; 
-    height: auto;
-    cursor: pointer;
-
-}
-
-.user-right img:hover {
-    transform: scale(1.05); 
-}
-
-
-/*User sta aristera */
-
-.user-left {
-    position: absolute;
-    transform: rotate(270deg);
-    bottom: 230px; 
-    left: 300px; 
-    z-index: 10; 
-}
-
-.user-left img {
-    transition: transform 0.3s ease; 
-    width: 120px; 
-    height: auto;
-    cursor: pointer;
-
-}
-
-.user-left img:hover {
-    transform: scale(1.05); 
-}
-
-
-/*User sta mprosta */
-
-.user-front {
-    position: absolute;
-    top: 40px; 
-    left: 700px; 
-    z-index: 10; 
-}
-
-.user-front img {
-    transition: transform 0.3s ease; 
-    width: 120px; 
-    height: auto;
-    cursor: pointer;
-
-}
-
-.user-front img:hover {
-    transform: scale(1.05); 
-}
-
-/* paketo me kartes*/
-
-.card-pack {
-    position: absolute;
-    top: 370px; 
-    left: 700px; 
-    z-index: 10; 
-
-}
-
-.card-pack img {
-    transition: transform 0.3s ease; 
-    width: 120px; 
-    height: auto;
-    cursor: pointer;
-
-}
-
-.card-pack img:hover {
-    transform: scale(1.05); 
-}
-
-/*Cards for player*/
-.first-card {
-    position: absolute;
-    top: 500px; 
-    left: 550px; 
-    z-index: 10; 
-
-}
-
-.first-card img {
-    transition: transform 0.3s ease; 
-    width: 130px; 
-    height: auto;
-    cursor: pointer;
-}
-
-.first-card img:hover {
-    transform: scale(1.05); 
-}
-
-
-.second-card {
-    position: absolute;
-    top: 500px; 
-    left: 650px; 
-    z-index: 10; 
-
-}
-
-.second-card img {
-    transition: transform 0.3s ease; 
-    width: 130px; 
-    height: auto;
-    cursor: pointer;
-}
-
-.second-card img:hover {
-    transform: scale(1.05); 
-}
-
-.third-card {
-    position: absolute;
-    top: 500px; 
-    left: 750px; 
-    z-index: 10; 
-
-}
-
-.third-card img {
-    transition: transform 0.3s ease; 
-    width: 130px; 
-    height: auto;
-    cursor: pointer;
-}
-
-.third-card img:hover {
-    transform: scale(1.05); 
-}
-
-
-.fourth-card {
-    position: absolute;
-    top: 500px; 
-    left: 850px; 
-    z-index: 10; 
-
-}
-
-.fourth-card img {
-    transition: transform 0.3s ease; 
-    width: 130px; 
-    height: auto;
-    cursor: pointer;
-}
-
-.fourth-card img:hover {
-    transform: scale(1.05); 
-}
-
-.card-holder{
-    position: absolute;
-    bottom: 10px; 
-    left: 547px; 
-    z-index: 10; 
-}
-
-.card-holder img{
-    transition: transform 0.3s ease; 
-    width: 435px; 
-    height: 60px;
-    cursor: pointer;
-}
-
-
 
 
 .login-container {
@@ -329,6 +112,9 @@ body {
     transform: scale(1.05); /* Increase the scale on hover */
 }
 
+
+
+
 .popup{
     width: 400px;
     border-radius: 6px ;
@@ -388,6 +174,21 @@ body {
     color: #ebebeb;
   }
 
+  /*ROOM CSS  */
+  
+.user-icon {
+    position: absolute;
+    top: 20px; 
+    right: 50px; 
+    z-index: 10; 
+  }
+  
+  .user-icon img {
+    transition: transform 0.3s ease; 
+    width: 130px; 
+    height: auto;
+    cursor: pointer;
+  }  
 
 
 /* jo */
@@ -458,11 +259,11 @@ header {
     color: black;
 }
 
-
 /* space between the btn and the register */ 
 .login-register {
-    font-size: .9em;
+    font-size: 17px;
     text-align: center;
+
 }
 
 /* change the color/style of register under the btn */ 
@@ -475,4 +276,3 @@ header {
 .login-register p a:hover {
     text-decoration: underline;
 }
-

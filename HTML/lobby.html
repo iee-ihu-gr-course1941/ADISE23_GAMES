@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lobby Room</title>
     <link rel="stylesheet" href="../CSS/loading.css">
+    <link rel="stylesheet" href="../CSS/set.css">
+    <link rel="stylesheet" href="../CSS/user.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
 </head>
 
 <body>    
@@ -17,6 +20,77 @@
     </div>
 
     <!--ISWS MPEI LOADING BAR-->
+
+    <script src="../js/username.js"></script>
+
+     <!-- USER PROFIL -->
+     <div id="drop-down"   class="nava" style="display: none;">
+        <nav class="navbar" >
+            <div class="profile-dropdown">
+                <div class="profile-dropdown-btn" onclick="toggle()">
+                    <div class="profile-img">
+                        <i class="fa-solid fa-circle"></i>
+                    </div>
+                    <span> Username <i class="fa-solid fa-angle-down"></i> </span>
+                </div>
+    
+                <ul class="profile-dropdown-list">
+                    <li class="profile-dropdown-list-item">
+                        <a href="./main.html">
+                            <i class="fa-solid fa-bars"></i>
+                             Menu
+                        </a>
+                    </li>
+                    <li class="profile-dropdown-list-item">
+                        <a href="scrbrd.html">
+                            <i class="fa-solid fa-chart-line"></i>  
+                            Score Board
+                        </a>
+                    </li>
+                
+    
+                    <li style="height: 60px;"  class="profile-dropdown-list-item">
+                        <audio id="audio" loop>
+                            <source src="1.mp3" type="audio/mp3">
+                        </audio>
+                        <div class="container">
+                            <div class="toggle" onclick="toggleSound('audio')">
+                                <div class="toggle-button" id="playPauseBTN"></div>
+                            </div>
+                            <div class="text">Music OFF</div>
+                        </div>
+                    </li>
+    
+                    <li style="height: 60px;" class="profile-dropdown-list-item">
+                        <audio id="audio2"> <!-- ALLAGH -->
+                            <source id="sound" src="sound.wav" type="audio/mp3">
+                        </audio>
+                        <div class="container2">
+                            <div class="toggle2" onclick="toggleSound2('audio2')">
+                                <div class="toggle-button2" id="playPauseBTN2"></div>
+                            </div>
+                            <div class="text2">Sound OFF</div>
+                        </div>
+                    </li>
+                <hr />
+                    <li class="profile-dropdown-list-item" onclick="logoutUser()">
+                        <a href="#">
+                        <i class="fa-solid fa-arrow-right-from-bracket"></i> 
+                            Log out
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+
+ <script src="../js/lobby.js"></script>
+ <script src="../js/user.js"></script>
+
+
+<script src="../js/set.js"></script>
+
+
 
 </body>
 

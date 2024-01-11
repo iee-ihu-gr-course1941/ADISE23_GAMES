@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="../CSS/user.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
 
+
     <style>
         .login-container{
             height: 400px;
@@ -31,12 +32,15 @@
             margin-bottom: 1px;
         }
 
-        .txt li{
+        ul{
+            margin-left: -25px;
+        }
+
+        li{
             padding: 2px;
             letter-spacing: 0.20px;
             text-align: justify;
         }
-
 
     </style>
 
@@ -51,7 +55,7 @@
             <div class="form-group">
 
                 <p>
-                    <ul style="margin-left: -25px;" class="txt">
+                    <ul>
                     <b><li>Four cards are dealt to each player and four are placed face-up on the table. Players can pick a card from the ones on the table
                     <i>(the one that suits them best) </i> on the condition that they leave one in its place.</li>
                     <li>The player who gets to choose first is
@@ -68,9 +72,14 @@
         </form>
     </div>
 
-    
-<!-- USER PROFIL -->
-<div class="nava">
+
+<!--
+    <div class="user-icon">
+        <img src="../images/profile.png" alt="User Icon">
+    </div> 
+-->
+ <!-- USER PROFIL -->
+ <div class="nava">
     <nav class="navbar" >
         <div class="profile-dropdown">
             <div class="profile-dropdown-btn" onclick="toggle()">
@@ -82,9 +91,9 @@
 
             <ul class="profile-dropdown-list">
                 <li class="profile-dropdown-list-item">
-                    <a href="#">
-                        <i class="fa-regular fa-user"></i> 
-                        My Profile
+                    <a href="./main.html">
+                        <i class="fa-solid fa-bars"></i>
+                         Menu
                     </a>
                 </li>
                 <li class="profile-dropdown-list-item">
@@ -93,43 +102,51 @@
                         Score Board
                     </a>
                 </li>
+            
                 <li style="height: 60px;"  class="profile-dropdown-list-item">
-                            <audio id="audio" loop>
-                                <source src="1.mp3" type="audio/mp3">
-                            </audio>
-                            <div class="container">
-                                <div class="toggle" onclick="toggleSound('audio')">
-                                    <div class="toggle-button" id="playPauseBTN"></div>
-                                </div>
-                                <div class="text">Music OFF</div>
-                            </div>
+                    <audio id="audio" loop>
+                        <source src="1.mp3" type="audio/mp3">
+                    </audio>
+                    <div class="container">
+                        <div class="toggle" onclick="toggleSound('audio')">
+                            <div class="toggle-button" id="playPauseBTN"></div>
+                        </div>
+                        <div class="text">Music OFF</div>
+                    </div>
                 </li>
+
                 <li style="height: 60px;" class="profile-dropdown-list-item">
-                            <audio id="audio2"> <!-- ALLAGH -->
-                                <source id="sound" src="sound.wav" type="audio/mp3">
-                            </audio>
-                            <div class="container2">
-                                <div class="toggle2" onclick="toggleSound2('audio2')">
-                                    <div class="toggle-button2" id="playPauseBTN2"></div>
-                                </div>
-                                <div class="text2">Sound OFF</div>
-                            </div>
-                       
+                    <audio id="audio2"> <!-- ALLAGH -->
+                        <source id="sound" src="sound.wav" type="audio/mp3">
+                    </audio>
+                    <div class="container2">
+                        <div class="toggle2" onclick="toggleSound2('audio2')">
+                            <div class="toggle-button2" id="playPauseBTN2"></div>
+                        </div>
+                        <div class="text2">Sound OFF</div>
+                    </div>
                 </li>
             <hr />
-                <li class="profile-dropdown-list-item">
-                    <a href="login.html">
-                        <i class="fa-solid fa-arrow-right-from-bracket"></i> 
+                <li class="profile-dropdown-list-item" onclick="logoutUser()">
+                    <a href="#">
+                    <i class="fa-solid fa-arrow-right-from-bracket"></i> 
                         Log out
                     </a>
                 </li>
-            </ul>
+          </ul>
         </div>
     </nav>
 </div>
 
-<script src="../js/set.js"></script>
-<script src="../js/user.js"></script>
-</body>
 
+
+
+ <script src="../js/set.js"></script>
+ <script src="../js/user.js"></script>
+ <script src="../js/scbrd.js"></script>
+ <script src="../js/username.js"></script>
+
+
+
+</body>
 </html>

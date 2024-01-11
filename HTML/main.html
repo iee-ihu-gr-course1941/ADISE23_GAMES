@@ -4,33 +4,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome of GAMES</title>
+    <title>GAMES</title>
     <link rel="stylesheet" href="../CSS/style.css">
     <link rel="stylesheet" href="../CSS/set.css">
     <link rel="stylesheet" href="../CSS/user.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+
 </head>
 
 <body>
- 
     <div class="login-container">
-        <h2>MENU</h2><br>
+        <h2>MENU</h2>
         <div class="login-form">
             <div class="form-group">
-                <button onclick="document.location='start.html'">Start</button>
+                <button onclick="startGame()">Start</button>
             </div>
+
             <div class="form-group">
                 <button onclick="document.location='rules.html'">Rules</button>
             </div>
             <div class="form-group">
-                <button onclick="document.location='settings.html'">Settings</button>
+                <button style="display: none;"  id="lgn" onclick="document.location='login.html'">Save Progress</button>
             </div>
         </div>
     </div>
 
 
-<!-- USER PROFIL -->
-<div class="nava">
+      <!-- USER PROFIL -->
+    <div id="drop-down"   class="nava" style="display: none;">
     <nav class="navbar" >
         <div class="profile-dropdown">
             <div class="profile-dropdown-btn" onclick="toggle()">
@@ -42,9 +43,9 @@
 
             <ul class="profile-dropdown-list">
                 <li class="profile-dropdown-list-item">
-                    <a href="#">
-                        <i class="fa-regular fa-user"></i> 
-                        My Profile
+                    <a href="./main.html">
+                        <i class="fa-solid fa-bars"></i>
+                         Menu
                     </a>
                 </li>
                 <li class="profile-dropdown-list-item">
@@ -53,33 +54,35 @@
                         Score Board
                     </a>
                 </li>
+            
+
                 <li style="height: 60px;"  class="profile-dropdown-list-item">
-                            <audio id="audio" loop>
-                                <source src="1.mp3" type="audio/mp3">
-                            </audio>
-                            <div class="container">
-                                <div class="toggle" onclick="toggleSound('audio')">
-                                    <div class="toggle-button" id="playPauseBTN"></div>
-                                </div>
-                                <div class="text">Music OFF</div>
-                            </div>
+                    <audio id="audio" loop>
+                        <source src="1.mp3" type="audio/mp3">
+                    </audio>
+                    <div class="container">
+                        <div class="toggle" onclick="toggleSound('audio')">
+                            <div class="toggle-button" id="playPauseBTN"></div>
+                        </div>
+                        <div class="text">Music OFF</div>
+                    </div>
                 </li>
+
                 <li style="height: 60px;" class="profile-dropdown-list-item">
-                            <audio id="audio2"> <!-- ALLAGH -->
-                                <source id="sound" src="sound.wav" type="audio/mp3">
-                            </audio>
-                            <div class="container2">
-                                <div class="toggle2" onclick="toggleSound2('audio2')">
-                                    <div class="toggle-button2" id="playPauseBTN2"></div>
-                                </div>
-                                <div class="text2">Sound OFF</div>
-                            </div>
-                       
+                    <audio id="audio2"> <!-- ALLAGH -->
+                        <source id="sound" src="sound.wav" type="audio/mp3">
+                    </audio>
+                    <div class="container2">
+                        <div class="toggle2" onclick="toggleSound2('audio2')">
+                            <div class="toggle-button2" id="playPauseBTN2"></div>
+                        </div>
+                        <div class="text2">Sound OFF</div>
+                    </div>
                 </li>
             <hr />
-                <li class="profile-dropdown-list-item">
-                    <a href="login.html">
-                        <i class="fa-solid fa-arrow-right-from-bracket"></i> 
+                <li class="profile-dropdown-list-item" onclick="logoutUser()">
+                    <a href="#">
+                    <i class="fa-solid fa-arrow-right-from-bracket"></i> 
                         Log out
                     </a>
                 </li>
@@ -88,8 +91,28 @@
     </nav>
 </div>
 
+<div class="popup" id="popup">
+    <img src="../images/info.png" width="100px">
+    <h2>Welcome to Games</h2>
+    <p id="login-message">Please sign in to continue</p>
+    <button onclick="registerForm()">Sign Up</button>
+    <button onclick="loginIT()">Sign in with IT 
+    <!--
+    <img src="../images/iee.png" alt="iee ihu" style="height:25px; margin-left: 5px; width:25px; vertical-align:middle; margin-bottom: 10px;"> 
+    -->
+    </button>
+    
+    <button onclick="loginGuest()">Continue as a guest</button>
+</div>   
+
+
+<script src="../js/games.js"></script>
 <script src="../js/set.js"></script>
 <script src="../js/user.js"></script>
+<script src="../js/username.js"></script>
+
+
+
 </body>
 
 </html>

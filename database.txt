@@ -1,0 +1,106 @@
+-- Table to store player information
+CREATE TABLE `Players` (
+  `PlayerID` int(11) NOT NULL AUTO_INCREMENT,
+  `Username` varchar(50) NOT NULL,
+  `Password` varchar(255) DEFAULT NULL,
+  `GamesWon` int(11) DEFAULT 0,
+  `GamesPlayed` int(11) DEFAULT 0,
+  `Email` varchar(255) DEFAULT NULL,
+  `LoggedIn` boolean DEFAULT false,
+  `UserType` varchar(10) NOT NULL DEFAULT 'registered',
+  `InLobby` boolean  DEFAULT false,
+  PRIMARY KEY (`PlayerID`)
+
+
+
+-- Table to store card information
+CREATE TABLE Cards (
+    CardID INT AUTO_INCREMENT,
+    CardSuit VARCHAR(10) NOT NULL,
+    CardRank VARCHAR(5) NOT NULL,
+    PRIMARY KEY (CardID)
+);
+
+
+-- Table to store game information
+CREATE TABLE `Game` (
+  `GameID` int(11) NOT NULL AUTO_INCREMENT,
+  `IsFinished` boolean  DEFAULT false,
+  `PlayerOneID` int(11) DEFAULT NULL,
+  `PlayerTwoID` int(11) DEFAULT NULL,
+  `CurrentTurnPlayerID` int(11) DEFAULT NULL,
+  PRIMARY KEY (`GameID`),
+  KEY `PlayerOneID` (`PlayerOneID`),
+  KEY `PlayerTwoID` (`PlayerTwoID`),
+  KEY `CurrentTurnPlayerID` (`CurrentTurnPlayerID`),
+  FOREIGN KEY (`PlayerOneID`) REFERENCES `Players` (`PlayerID`),
+  FOREIGN KEY (`PlayerTwoID`) REFERENCES `Players` (`PlayerID`),
+  FOREIGN KEY (`CurrentTurnPlayerID`) REFERENCES `Players` (`PlayerID`)
+
+
+-- Table to store player hands
+CREATE TABLE Hands (
+    HandID INT AUTO_INCREMENT,
+    GameID INT,
+    PlayerID INT,
+    CardID INT,
+    CardPicked BOOLEAN DEFAULT 0, 
+    FOREIGN KEY (GameID) REFERENCES Game(GameID),
+    FOREIGN KEY (PlayerID) REFERENCES Players(PlayerID),
+    FOREIGN KEY (CardID) REFERENCES Cards(CardID),
+    PRIMARY KEY (HandID)
+);
+
+-- Table to store cards on the table
+CREATE TABLE OnTable (
+    TableCardID INT AUTO_INCREMENT,
+    GameID INT,
+    CardID INT,
+    FOREIGN KEY (GameID) REFERENCES Game(GameID),
+    FOREIGN KEY (CardID) REFERENCES Cards(CardID),
+    PRIMARY KEY (TableCardID)
+);
+
+
+-- Table to store the deck of cards
+CREATE TABLE Pack (
+    PackCardID INT PRIMARY KEY AUTO_INCREMENT,
+    GameID INT,
+    CardID INT,
+    FOREIGN KEY (GameID) REFERENCES Game(GameID),
+    FOREIGN KEY (CardID) REFERENCES Cards(CardID),
+    UNIQUE KEY (GameID, CardID)
+);
+
+-- Table to store game state 
+CREATE TABLE State (
+    GameID INT PRIMARY KEY,
+    WinnerID INT,
+    GameOver BOOLEAN,
+    RoundNumber INT DEFAULT 1, 
+    FOREIGN KEY (GameID) REFERENCES Game(GameID),
+    FOREIGN KEY (WinnerID) REFERENCES Players(PlayerID)
+);
+
+-- Table to store sweeps
+CREATE TABLE Sweep (
+     SweepID INT AUTO_INCREMENT,
+     GameID INT,
+     RoundNumber INT,
+     PreviousCards JSON, 
+     FOREIGN KEY (GameID) REFERENCES Game(GameID),   
+     PRIMARY KEY (SweepID));
+
+CREATE TABLE GameResults (
+    ResultID INT AUTO_INCREMENT,
+    PlayerID INT,
+    GameID INT,
+    DatePlayed DATE,
+    Win BOOLEAN,
+    Loss BOOLEAN,
+    Score INT,
+    Round INT,
+    FOREIGN KEY (PlayerID) REFERENCES Players(PlayerID),
+    FOREIGN KEY (GameID) REFERENCES Game(GameID),
+    PRIMARY KEY (ResultID)
+);

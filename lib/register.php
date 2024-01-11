@@ -1,7 +1,8 @@
 <?php
-require_once 'dbconnect.php'; //database connection
+require_once 'dbconnect.php'; // Database connection
 
-// Elegxos gia an uparxei to username
+header('Content-Type: application/json'); 
+
 function usernameExists($pdo, $username) {
     $stmt = $pdo->prepare("SELECT Username FROM Players WHERE Username = ?");
     $stmt->bindParam(1, $username);
@@ -9,7 +10,6 @@ function usernameExists($pdo, $username) {
     return $stmt->rowCount() > 0;
 }
 
-// apanthsh sto AJAX request gia elegxo  username 
 if (isset($_POST['action']) && $_POST['action'] == 'check_username') {
     $username = $_POST['username'];
     $exists = usernameExists($pdo, $username);
@@ -17,10 +17,9 @@ if (isset($_POST['action']) && $_POST['action'] == 'check_username') {
     exit();
 }
 
-// Form submission
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $username = $_POST['username'];
-    $password = password_hash($_POST['password'], PASSWORD_DEFAULT); // Encrypt the password
+    $password = password_hash($_POST['password'], PASSWORD_DEFAULT); 
     $email = $_POST['email'];
 
     if (!usernameExists($pdo, $username)) {
@@ -30,7 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $stmt->bindParam(3, $email);
 
         if ($stmt->execute()) {
-            echo json_encode(['success' => true, 'message' => 'Registration successful']); //an ginei to registration
+            echo json_encode(['success' => true, 'message' => 'Registration successful']);
         } else {
             echo json_encode(['success' => false, 'message' => 'Registration failed', 'errorInfo' => $stmt->errorInfo()]);
         }

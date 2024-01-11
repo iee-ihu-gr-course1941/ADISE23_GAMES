@@ -11,7 +11,7 @@
 <body>
     <div class="login-container">
         <h2>Login Form</h2>
-        <form class="login-form" action="../lib/login.php" method="post">
+        <form class="login-form" action="../lib/login.php" method="post"  id="loginForm">
             <div class="form-group">
                 <label for="username">Username</label>
                 <input type="text" id="username" name="username" required>
@@ -44,38 +44,9 @@
         <img src="../images/error_icon.png" width="100px">
         <h2>Warning!</h2>
         <p id="error-message">Username or password is incorrect.</p>
-        <button type="button" onclick="closePopup()">OK</button>
+        <button type="button" onclick="lgn_closePopup()">OK</button>
     </div>   
 
-     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            document.getElementById('loginForm').addEventListener('submit', function(event) {
-            event.preventDefault();
-            login();
-        });
-    });
-
-    function login() {
-        var username = document.getElementById('username').value;
-        var password = document.getElementById('password').value;
-
-        var xhr = new XMLHttpRequest();
-        xhr.open('POST', 'login.php', true);
-        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-        xhr.onreadystatechange = function() {
-            if (this.readyState == 4 && this.status == 200) {
-                var response = JSON.parse(this.responseText);
-                if (response.success) {
-                    alert('Login successful!');
-                    // Redirect to another page or further processing
-                } else {
-                    alert('Login failed: ' + response.error);
-                }
-            }
-        };
-        xhr.send('username=' + encodeURIComponent(username) + '&password=' + encodeURIComponent(password));
-    }
-     </script>
-
+<script src="../js/games.js"></script>
 </body>
 </html>

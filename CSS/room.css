@@ -1,0 +1,349 @@
+body {
+  font-family: 'Times New Roman', sans-serif; 
+
+  background-image: url('../images/bg3.png');
+  background-size: 1550px 750px;
+  background-position: center;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow:hidden ;
+  
+  height: 100vh;
+}
+
+
+.user-icon {
+  position: absolute;
+  top: 20px; 
+  right: 50px; 
+  z-index: 10; 
+}
+
+.user-icon img {
+  transition: transform 0.3s ease; 
+  width: 130px; 
+  height: auto;
+  cursor: pointer;
+
+}
+
+
+.table-icon{
+  position: relative;
+
+  z-index: 10; 
+}
+
+.table-icon img {
+  transition: transform 0.3s ease; 
+  width: 600px; 
+  height: auto;
+}
+
+.user-icon img:hover {
+  transform: scale(1.10); 
+}
+
+
+
+
+
+
+/*TABLE CARDS*/
+
+.first-tcard {
+  left: 600px;
+
+}
+
+.first-tcard, .second-tcard, .third-tcard , .fourth-tcard
+{
+  position: absolute;
+  z-index: 10; 
+  top: 350px;
+
+}
+
+.first-tcard img {
+  transition: transform 0.3s ease; 
+  width: 80px; 
+  height: auto;
+  cursor: pointer;
+}
+
+.first-tcard img:hover {
+  transform: scale(1.05); 
+}
+
+
+.second-tcard {
+  left: 700px;
+}
+
+.second-tcard img {
+  transition: transform 0.3s ease; 
+  width: 80px; 
+  height: auto;
+  cursor: pointer;
+}
+
+.second-tcard img:hover {
+  transform: scale(1.05); 
+}
+
+.third-tcard {
+  left: 800px;
+}
+
+.third-tcard img {
+  transition: transform 0.3s ease; 
+  width: 80px; 
+  height: auto;
+  cursor: pointer;
+}
+
+.third-tcard img:hover {
+  transform: scale(1.05); 
+}
+
+
+.fourth-tcard {
+left: 900px;
+
+}
+
+.fourth-tcard img {
+  transition: transform 0.3s ease; 
+  width: 80px; 
+  height: auto;
+  cursor: pointer;
+}
+
+.fourth-tcard img:hover {
+  transform: scale(1.05); 
+}
+
+
+
+
+/* Για max-width: 1780px */
+@media only screen and (max-width: 1780px) {
+  .first-tcard, .second-tcard, .third-tcard, .fourth-tcard {
+    position: absolute;
+    z-index: 10; 
+    top: 220px;
+    margin-top: 120px;
+    margin-left: 100px;
+  }
+}
+
+/* Για max-width: 1680px */
+@media only screen and (max-width: 1680px) {
+  .first-tcard, .second-tcard, .third-tcard, .fourth-tcard {
+    position: absolute;
+    z-index: 10; 
+    top: 350px;
+    margin-top: -30px;
+    margin-left: 90px;
+    right: 50px;
+  }
+}
+
+/* Για max-width: 1580px */
+@media only screen and (max-width: 1580px) {
+    .first-tcard, .second-tcard, .third-tcard, .fourth-tcard {
+      position: absolute;
+      z-index: 10; 
+      top: 430px;
+      margin-top: -100px;
+      margin-left: -10px;    
+  }
+}
+
+
+@media only screen and (max-width: 1280px) {
+  .first-tcard, .second-tcard, .third-tcard, .fourth-tcard {
+    position: absolute;
+    z-index: 10; 
+    top: 350px;
+    margin-top: -50px;
+    margin-left: -130px;
+  }
+}
+
+
+
+/*Cards for player*/
+.first-card {
+  position: relative;
+
+  z-index: 10; 
+
+}
+
+.first-card, .second-card, .third-card , .fourth-card
+{
+  margin-top: 500px;
+
+}
+
+.first-card img {
+  transition: transform 0.3s ease; 
+  width: 130px; 
+  height: auto;
+  cursor: pointer;
+}
+
+.first-card img:hover {
+  transform: scale(1.05); 
+}
+
+
+.second-card {
+  position: relative;
+
+  z-index: 10; 
+
+}
+
+.second-card img {
+  transition: transform 0.3s ease; 
+  width: 130px; 
+  height: auto;
+  cursor: pointer;
+}
+
+.second-card img:hover {
+  transform: scale(1.05); 
+}
+
+.third-card {
+  position: relative;
+
+  z-index: 10; 
+
+}
+
+.third-card img {
+  transition: transform 0.3s ease; 
+  width: 130px; 
+  height: auto;
+  cursor: pointer;
+}
+
+.third-card img:hover {
+  transform: scale(1.05); 
+}
+
+
+.fourth-card {
+  position: relative;
+
+  z-index: 10; 
+
+}
+
+.fourth-card img {
+  transition: transform 0.3s ease; 
+  width: 130px; 
+  height: auto;
+  cursor: pointer;
+}
+
+.fourth-card img:hover {
+  transform: scale(1.05); 
+}
+
+.card-holder{
+  position: absolute;
+  bottom: 0px; 
+  z-index: 10; 
+}
+
+.card-holder img{
+  transition: transform 0.3s ease; 
+  width: 510px; 
+  height: 70px;
+  cursor: pointer;
+}
+
+
+
+
+
+#timer{
+  position: absolute;
+  bottom: 0px; 
+  font-size: 50px;
+  z-index: 10; 
+  color: #ebebeb;
+}
+
+
+
+
+
+.popup{
+  z-index: 10;
+  width: 400px;
+  border-radius: 6px ;
+  background: #000000;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%,-50%)scale(0.1);
+  text-align: center;
+  padding: 0 30px 30px;
+  color: #ebebeb;
+  visibility: hidden;
+  transition: transform 0.4s, top 0.4s;
+  box-shadow: 0 0 10px #ebebeb;
+
+}
+/* for the script */
+.open-popup{
+  visibility: visible;
+  top: 50%;
+  transform: translate(-50%,-50%)scale(1);
+}
+
+
+.popup img{
+  margin-top: 10px;
+  border-radius: 50%;
+}
+
+.popup h2{
+  font-size: 38px;
+  font-weight: 500;
+  margin: 30px 0 10px;
+}
+
+.popup p{
+  font-size: 18px;
+}
+
+.popup button{
+  width: 100%;
+  margin-top: 40px;
+  padding: 10px;
+  background-color: #ebebeb;
+  border: 0;
+  outline: none;
+  font-size: 18px;
+  border-radius: 4px;
+  cursor: pointer;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+  font-family: 'Times New Roman', sans-serif; 
+
+}
+.popup button:hover{
+  background-color: rgb(80, 0, 0);
+  transform: scale(1.05); /* Increase the scale on hover */
+  color: #ebebeb;
+}
+
+
+

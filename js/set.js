@@ -4,7 +4,49 @@ var isPlaying = localStorage.getItem('isPlaying') === 'true';
 
 function playPause() {
     if (!isPlaying) {
-        isPlaying = true;
+        isPlaying = true;// Function to initialize the state of each audio control on page load
+        function initializeAudioControl(audioId, toggleClass, textClass) {
+            var audio = document.getElementById(audioId);
+            var isPlaying = localStorage.getItem(audioId + 'IsPlaying') === 'true';
+            var toggle = document.querySelector(toggleClass);
+            var text = document.querySelector(textClass);
+        
+            // Update UI and audio state based on localStorage
+            if (isPlaying) {
+                audio.play();
+                toggle.classList.add("active");
+                text.innerHTML = "Music ON";
+            } else {
+                audio.pause();
+                toggle.classList.remove("active");
+                text.innerHTML = "Music OFF";
+            }
+        }
+        
+        // Simplified toggleSound function for both audio elements
+        function toggleSound(audioId, toggleClass, textClass) {
+            var audio = document.getElementById(audioId);
+            var isPlaying = !audio.paused;
+            var toggle = document.querySelector(toggleClass);
+            var text = document.querySelector(textClass);
+        
+            if (isPlaying) {
+                audio.pause();
+                text.innerHTML = "Music OFF";
+            } else {
+                audio.play();
+                text.innerHTML = "Music ON";
+            }
+            toggle.classList.toggle("active");
+            localStorage.setItem(audioId + 'IsPlaying', !isPlaying);
+        }
+        
+        // Initialize audio controls on page load
+        document.addEventListener("DOMContentLoaded", function() {
+            initializeAudioControl('audio', '.toggle', '.text');
+            initializeAudioControl('audio2', '.toggle2', '.text2');
+        });
+        
         audio.play();
     } else {
         isPlaying = false;
@@ -127,4 +169,3 @@ function toggleSound2() {
         }
     }
 }
-

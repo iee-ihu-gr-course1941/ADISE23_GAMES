@@ -5,57 +5,204 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GAMES</title>
-    <link rel="stylesheet" href="../CSS/style.css">
+    <link rel="stylesheet" href="../CSS/room.css">
+    <link rel="stylesheet" href="../CSS/set.css">
+    <link rel="stylesheet" href="../CSS/user.css">
+    <link rel="stylesheet" href="../CSS/scr.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+
+    <style>
+        main.table {
+            width: 16vw;
+            height: 20vh;
+            
+        }
+    
+        .table{
+            position: absolute;
+            bottom: 40px;
+            right: 10px;
+        }
+    </style>
+
 </head>
 
-<body>
-  <div class="user-right">
-    <img src="../images/user.png" alt="User Icon">
-  </div> 
+<body >
 
-  <div class="user-left">
-    <img src="../images/user.png" alt="User Icon">
-  </div> 
+    <div class="first-tcard">
+        <img src="../images/classic-cards/back-card.png" alt="Card">
+      </div>
+    
+      <div class="second-tcard">
+        <img src="../images/classic-cards/back-card.png" alt="Card">
+      </div>
+    
+      <div class="third-tcard">
+        <img src="../images/classic-cards/back-card.png" alt="Card">
+      </div>
+    
+      <div class="fourth-tcard">
+        <img src="../images/classic-cards/back-card.png" alt="Card">
+      </div>
 
-  <div class="user-front">
-    <img src="../images/user.png" alt="User Icon">
-  </div> 
-
-  <div class="table-icon">
-    <img src="../images/table.png" alt="Table Icon">
-  </div> 
 
 
-  <div class="user-icon">
-    <img src="../images/profile.png" alt="User Icon">
-  </div> 
 
-  <div class="card-pack">
-    <img src="../images/cards/pack.png" alt="Card Pack">
-  </div> 
+
 
   <div class="first-card">
-    <img src="../images/cards/diamonds/3-diamonds.png" alt="Card">
+    <img src="../images/classic-cards/back-card.png" alt="Card">
   </div>
 
   <div class="second-card">
-    <img src="../images/cards/clubs/5-clubs.png" alt="Card">
+    <img src="../images/classic-cards/back-card.png" alt="Card">
   </div>
 
   <div class="third-card">
-    <img src="../images/cards/hearts/5-hearts.png" alt="Card">
+    <img src="../images/classic-cards/back-card.png" alt="Card">
   </div>
 
   <div class="fourth-card">
-    <img src="../images/cards/spades/5-spades.png" alt="Card">
+    <img src="../images/classic-cards/back-card.png" alt="Card">
   </div>
 
+  
   <div class="card-holder">
     <img src="../images/card_holder.png" alt="Card">
   </div>
-  
 
+  <div id="timer">30</div>
+
+
+
+
+  <div class="popup" id="popup">
+    <img src="../images/pack.png" width="100px">
+    <h2>Welcome to Room</h2>
+    <p >Please choose a deck</p>
+    <button onclick="startWithTheme()">Themed Deck</button>
+    <button onclick="startWithClassic()">Classic Deck 
+    </button>
+</div>   
+
+<div style="background-color: #ebebeb;" class="popup" id="your-turn">
+    <img src="../images/exchange.png" width="100px">
+    <h2 style="color: black;">Your turn!</h2>
+    <p style="color: black;">It's your time to play</p>
+</div>  
+
+<div style="background-color: #ebebeb;" class="popup" id="exchange-card">
+    <img src="../images/exchange.png" width="100px">
+    <h2 style="color: black;">Exchange Time!</h2>
+    <p style="color: black;">Choose a card to exchange with one on the table</p>
+</div>  
+
+<div style="background-color: #ebebeb;" class="popup" id="opp-turn">
+    <img src="../images/stop-sign.png" width="100px">
+    <h2 style="color: black;">Opponents' turn!</h2>
+    <p style="color: black;">Wait till his next move</p>
+</div>  
+
+<div style="background-color: #ebebeb;"  class="popup" id="sweep">
+    <img src="../images/sweep.png" width="100px">
+    <h2 style="color: black;">It's sweep time!</h2>
+    <p style="color: black;">The cards on the table will change</p>
+</div>  
+
+
+  <!-- SCORE -->
+<main class="table" id="customers_table">
+    <section class="table__header">
+        <h1>SCORE</h1>
+    </section>
+    <section class="table__body">
+        <table>
+            <thead>
+                <tr>
+                   <tr>
+                       <th>You </th>
+                       <th>User </th>
+                   </tr>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>1</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+  </main>
+    
+
+      <!-- USER PROFIL -->
+      <div class="nava">
+        <nav class="navbar" >
+            <div class="profile-dropdown">
+                <div class="profile-dropdown-btn" onclick="toggle()">
+                    <div class="profile-img">
+                        <i class="fa-solid fa-circle"></i>
+                    </div>
+                    <span> Username <i class="fa-solid fa-angle-down"></i> </span>
+                </div>
+    
+                <ul class="profile-dropdown-list">
+                    <li class="profile-dropdown-list-item">
+                        <a href="./main.html">
+                            <i class="fa-solid fa-bars"></i>
+                             Menu
+                        </a>
+                    </li>
+                    <li class="profile-dropdown-list-item">
+                        <a href="scrbrd.html">
+                            <i class="fa-solid fa-chart-line"></i>  
+                            Score Board
+                        </a>
+                    </li>
+                
+                    <li style="height: 60px;"  class="profile-dropdown-list-item">
+                        <audio id="audio" loop>
+                            <source src="1.mp3" type="audio/mp3">
+                        </audio>
+                        <div class="container">
+                            <div class="toggle" onclick="toggleSound('audio')">
+                                <div class="toggle-button" id="playPauseBTN"></div>
+                            </div>
+                            <div class="text">Music OFF</div>
+                        </div>
+                    </li>
+    
+                    <li style="height: 60px;" class="profile-dropdown-list-item">
+                        <audio id="audio2"> <!-- ALLAGH -->
+                            <source id="sound" src="sound.wav" type="audio/mp3">
+                        </audio>
+                        <div class="container2">
+                            <div class="toggle2" onclick="toggleSound2('audio2')">
+                                <div class="toggle-button2" id="playPauseBTN2"></div>
+                            </div>
+                            <div class="text2">Sound OFF</div>
+                        </div>
+                    </li>
+                <hr />
+                    <li class="profile-dropdown-list-item" onclick="logoutUser()">
+                        <a href="#">
+                        <i class="fa-solid fa-arrow-right-from-bracket"></i> 
+                            Log out
+                        </a>
+                    </li>
+              </ul>
+            </div>
+        </nav>
+    </div>
+
+<script src="../js/room.js"></script>
+<script src="../js/user.js"></script>
+<script src="../js/set.js"></script>
+<script src="../js/username.js"></script>
+<script src="../js/scbrd.js"></script>
 
 </body>
 
 </html>
+
