@@ -15,7 +15,7 @@ Table of Contents
 
 # Demo Page
 Μπορείτε να κατεβάσετε τοπικά ή να επισκευτείτε την σελίδα: 
-
+users.iee.ihu.gr/~iee2019149/adise-games/HTML/main.html
 
 
 
