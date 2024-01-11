@@ -7,8 +7,8 @@ Table of Contents
       * [Απαιτήσεις](#απαιτήσεις)
       * [Οδηγίες Εγκατάστασης](#οδηγίες-εγκατάστασης)
    * [Περιγραφή API](#περιγραφή-api)
-         * [Player](#player)
-         * [Status](#status)
+            * [Player](#player)
+            * [Status](#status)
 
 
 # Demo Page
