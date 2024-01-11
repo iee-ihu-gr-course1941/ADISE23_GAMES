@@ -125,11 +125,11 @@ function getShuffledDeck($preference) {
     return $deck;
 }
 
-$playerDeckPreference = $_SESSION['deckPreference'] ?? 'classic'; // Default to 'classic'
+$playerDeckPreference = $_SESSION['deckPreference'] ?? 'classic'; 
 
 $shuffledDeck = getShuffledDeck($playerDeckPreference);
 
-$topCards = array_slice($shuffledDeck, 0, 8); // Adjust the number as needed
+$topCards = array_slice($shuffledDeck, 0, 8);
 
 $response = [
     'success' => true,
