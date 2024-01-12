@@ -22,7 +22,6 @@ function checkUsername(username) {
     xhr.send("action=check_username&username=" + encodeURIComponent(username));
 }
 
-// Check before form submission
 function checkBeforeSubmit(username) {
     var xhr = new XMLHttpRequest();
     var username = document.getElementById("username").value;
@@ -45,7 +44,6 @@ function checkBeforeSubmit(username) {
     xhr.send("action=check_username&username=" + encodeURIComponent(username));
 }
 
-// Debounce function
 function debounce(func, wait, immediate) {
     var timeout;
     return function() {
@@ -105,11 +103,10 @@ function logoutUser() {
         if (this.readyState == 4 && this.status == 200) {
             var response = JSON.parse(this.responseText);
             if (response.success) {
-                alert(response.message); // Show success message
-                // Optionally, redirect to the login page or another page
+                alert(response.message);
                 window.location.href = '../HTML/main.html';
             } else {
-                alert(response.message); // Show failure message
+                alert(response.message); 
             }
         }
     };
