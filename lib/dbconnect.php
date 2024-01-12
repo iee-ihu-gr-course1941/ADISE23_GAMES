@@ -1,6 +1,6 @@
 <?php
 $host='localhost';
-$db ='Games';
+$db ='GAMES';
 require_once 'db_upass.php';
 
 
