@@ -23,26 +23,27 @@
             bottom: 40px;
             right: 10px;
         }
+
     </style>
 
 </head>
 
 <body >
 
-    <div class="first-tcard">
-        <img src="../images/classic-cards/back-card.png" alt="Card">
+    <div  class="first-tcard" >
+        <img onclick="takeTableCardPath('first-tcard')" src="../images/classic-cards/back-card.png" alt="Card" id="first-tcard">
       </div>
     
-      <div class="second-tcard">
-        <img src="../images/classic-cards/back-card.png" alt="Card">
+      <div  class="second-tcard" >
+        <img onclick="takeTableCardPath('second-tcard')" src="../images/classic-cards/back-card.png" alt="Card" id="second-tcard">
       </div>
     
-      <div class="third-tcard">
-        <img src="../images/classic-cards/back-card.png" alt="Card">
+      <div  class="third-tcard">
+        <img onclick="takeTableCardPath('third-tcard')" src="../images/classic-cards/back-card.png" alt="Card"  id="third-tcard">
       </div>
     
       <div class="fourth-tcard">
-        <img src="../images/classic-cards/back-card.png" alt="Card">
+        <img onclick="takeTableCardPath('fourth-tcard')"  src="../images/classic-cards/back-card.png" alt="Card"  id="fourth-tcard">
       </div>
 
 
@@ -51,19 +52,19 @@
 
 
   <div class="first-card">
-    <img src="../images/classic-cards/back-card.png" alt="Card">
+    <img onclick="takeUserCardPath('first-card')" src="../images/classic-cards/back-card.png" alt="Card" id="first-card">
   </div>
 
   <div class="second-card">
-    <img src="../images/classic-cards/back-card.png" alt="Card">
+    <img onclick="takeUserCardPath('second-card')" src="../images/classic-cards/back-card.png" alt="Card" id="second-card">
   </div>
 
   <div class="third-card">
-    <img src="../images/classic-cards/back-card.png" alt="Card">
+    <img onclick="takeUserCardPath('third-card')" src="../images/classic-cards/back-card.png" alt="Card" id="third-card">
   </div>
 
   <div class="fourth-card">
-    <img src="../images/classic-cards/back-card.png" alt="Card">
+    <img onclick="takeUserCardPath('fourth-card')" src="../images/classic-cards/back-card.png" alt="Card" id="fourth-card">
   </div>
 
   
@@ -71,7 +72,7 @@
     <img src="../images/card_holder.png" alt="Card">
   </div>
 
-  <div id="timer">30</div>
+  <div id="timer">100</div>
 
 
 
@@ -109,26 +110,41 @@
     <p style="color: black;">The cards on the table will change</p>
 </div>  
 
+<div  class="popup" id="win">
+    <img src="../images/win.png" width="300px">
+    <h2>You Won!</h2>
+    <p>Congratulations for your win, you gathered four identical cards!</p>
+    <button onclick="document.location='lobby.html'">Play again</button>
+</div>  
+
+<div  class="popup" id="defeat">
+    <img src="../images/defeat.png" width="300px">
+    <h2>You Lost!</h2>
+    <p>Time is up! Try next time</p>
+    <button onclick="document.location='lobby.html'">Play again</button>
+</div>  
+
+
 
   <!-- SCORE -->
 <main class="table" id="customers_table">
     <section class="table__header">
-        <h1>SCORE</h1>
+        <h1 style="font-family: Georgia, 'Times New Roman', Times, serif;">Round 1 of x </h1>
     </section>
     <section class="table__body">
         <table>
             <thead>
                 <tr>
                    <tr>
-                       <th>You </th>
-                       <th>User </th>
+                       <th style="text-align: center; font-family: Georgia, 'Times New Roman', Times, serif;">You </th>
+                       <th style="text-align: center; font-family: Georgia, 'Times New Roman', Times, serif;" >User </th>
                    </tr>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td>1</td>
-                    <td>1</td>
+                    <td id="points" style="text-align: center;">0</td>
+                    <td style="text-align: center;">0</td>
                 </tr>
             </tbody>
         </table>
