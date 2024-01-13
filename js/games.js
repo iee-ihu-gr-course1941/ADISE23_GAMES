@@ -158,8 +158,7 @@ function logoutUser() {
     //authentication mesw apps
     function loginIT()
     {
-        window.location.href="https://login.it.teithe.gr/authorization/?client_id=65947fc49847e402c7acae18&response_type=code&scope=profile&redirect_uri=http://localhost:4000/Desktop/ADISE23_GAMES-main/HTML/main.html"
-  
+        window.location.href="https://login.it.teithe.gr/authorization/?client_id=65a200edf9000102d54e1f60&response_type=code&scope=profile&redirect_uri=https://users.iee.ihu.gr/~iee2019149/adise-games/HTML/main.html"  
     }
   
     //an kanei login as a guest
