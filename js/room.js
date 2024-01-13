@@ -3,7 +3,7 @@ let currentCountdown;
 let currentCountdownInterval = null;
 let deck;
 let sweeppop=0;
-let wins;
+let wins=0;
 
 openPopup();
 
