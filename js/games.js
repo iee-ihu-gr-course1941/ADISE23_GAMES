@@ -171,7 +171,7 @@ function logoutUser() {
             var response = JSON.parse(xhr.response);
             if(response.success) {
                 document.getElementById("drop-down").style.display = "";
-                document.querySelector('.profile-dropdown-btn span').textContent = response.username; // Use the actual username
+                document.querySelector('.profile-dropdown-btn span').textContent = response.username; 
                 closePopup();
             } else {
                 console.error('Error logging in as guest:', response.error);
