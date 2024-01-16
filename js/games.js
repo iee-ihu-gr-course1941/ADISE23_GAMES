@@ -69,7 +69,6 @@ function reg_openPopup() {
 function submitForm() {
     var popup = document.getElementById("popup"); 
     popup.classList.remove("open-popup");
-    document.getElementById("registerForm").submit();
     redirectPage();
 }
 
