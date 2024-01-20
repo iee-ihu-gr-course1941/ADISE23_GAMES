@@ -1,28 +1,21 @@
 <?php
-$host='localhost';
-$db ='GAMES';
-require_once 'db_upass.php';
+$host = 'localhost';
+$db = 'GAMES';
+require_once "db_upass.php";
 
+$user = $DB_USER;
+$pass = $DB_PASS;
 
-$user=$DB_USER;
-$pass=$DB_PASS;
-
-if(gethostname()=='users.iee.ihu.gr'){
-    $mysqli = new mysqli($host,$user,$pass,$db,null,'/home/student/iee/2019/iee2019149/mysql/run/mysql.sock');
-    $conn=$mysqli;
-
+if(gethostname() == 'users.iee.ihu.gr') {
+    $dsn = "mysql:unix_socket=/home/student/iee/2019/iee2019149/mysql/run/mysql.sock;dbname=$db;charset=utf8";
 } else {
-    $pass = null;
-    $mysqli = new mysqli($host,$user,$pass,$db);
-    $conn=$mysqli;
+    $dsn = "mysql:host=$host;dbname=$db;charset=utf8";
 }
 
-if($mysqli->connect_errno){
-    echo "Failed to connect to MySQL: (" . 
-    $mysqli->connect_errno . ") " . $mysqli->connect_error;
+try {
+    $pdo = new PDO($dsn, $user, $pass);
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+} catch(PDOException $e) {
+    echo "Connection failed: " . $e->getMessage();
 }
-
-
-
-
 ?>
